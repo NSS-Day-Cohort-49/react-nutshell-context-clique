@@ -20,7 +20,7 @@ export const FriendsDetails = () => {
 
     return (
         <section className="friendArticle">
-            <h2 className="friendArticle__title">Articles By: {friendId.userId}</h2>
+            <h2 className="friendArticle__title">Articles By: {friend.user?.name}</h2>
 
         </section>
     )
