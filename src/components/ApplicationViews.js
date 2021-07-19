@@ -3,6 +3,10 @@ import { Route } from "react-router-dom"
 import { FriendsDetails } from "./friends/FriendsDetails"
 import { FriendList } from "./friends/FriendsList"
 import { FriendProvider } from "./friends/FriendsProvider"
+import { EventProvider } from "./events/EventsProvider"
+import { EventList } from "./events/EventsList"
+import { EventsDetails } from "./events/EventsDetail"
+import { EventForm } from "./events/EventsForm"
 
 export const ApplicationViews = () => {
   return (
@@ -31,9 +35,19 @@ export const ApplicationViews = () => {
         {/* Render the component for the user's tasks */}
       </Route>
 
+    <EventProvider>
       <Route path="/events">
-        {/* Render the component for the user's events */}
+        <EventList />
       </Route>
+
+      <Route exact path="/events/detail/:eventId(\d+)">
+        <EventsDetails />
+      </Route>
+
+      <Route exact path="/events/create">
+        <EventForm />
+      </Route>
+    </EventProvider>
     </>
   )
 }
