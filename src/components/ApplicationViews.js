@@ -4,37 +4,34 @@ import { ArticleProvider } from "./articles/ArticleProvider"
 import { FriendsDetails } from "./friends/FriendsDetails"
 import { FriendList } from "./friends/FriendsList"
 import { FriendProvider } from "./friends/FriendsProvider"
-import { ArticleForm } from "./articles/ArticleForm"
-import { ArticleList } from "./articles/ArticleList"
-
+import { FriendsForm } from "./friends/FriendsForm"
+import { UserProvider } from "./users/UsersProvider"
 export const ApplicationViews = () => {
   return (
     <>
       <ArticleProvider>
-        <FriendProvider>
-          <Route exact path="/">
-            {/* Render the component for news articles */}
-            <ArticleList />
-          </Route>
-
-          <Route exact path="/articles/create">
-            <ArticleForm />
-          </Route>
-        </FriendProvider>
-      </ArticleProvider>
-
-        <FriendProvider>
-          <Route exact path="/friends/detail/:friendId(\d+)">
-            <FriendsDetails />
-          </Route>
-
-          <Route exact path="/friends">
-            <FriendList />
-          </Route>
-
-        </FriendProvider>
+        <Route exact path="/">
+          {/* Render the component for news articles */}
+        </Route>
       
 
+      <FriendProvider>
+        <Route exact path="/friends/detail/:friendId(\d+)">
+          <FriendsDetails />
+        </Route>
+
+        <UserProvider>
+          <Route exact path="/friends/create">
+            <FriendsForm />
+          </Route>
+        </UserProvider>
+
+        <Route exact path="/friends">
+          <FriendList />
+        </Route>
+
+      </FriendProvider>
+    </ArticleProvider>
       <Route path="/messages">
         {/* Render the component for the messages */}
       </Route>
