@@ -11,7 +11,8 @@ import { UserProvider } from "./users/UsersProvider"
 export const ApplicationViews = () => {
   return (
     <>
-      <Route>
+
+      <Route exact path="/">
         {/* Render the component for news articles */}
       </Route>
 
