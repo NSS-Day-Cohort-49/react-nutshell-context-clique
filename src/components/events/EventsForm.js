@@ -28,7 +28,7 @@ export const EventForm = () => {
     setEvent(newEvent)
   }
 
-  const handleClickSaveEvent = (evt) => {
+  const handleClickAddEvent = (evt) => {
     evt.preventDefault() //Prevents the browser from submitting the form
 
       const newEvent = {
@@ -61,8 +61,8 @@ export const EventForm = () => {
           <input type="text" id="dateTime" required autoFocus className="form-control" placeholder="Event date" value={event.dateTime} onChange={handleControlledInputChange} />
         </div>
       </fieldset>
-      <button className="btn btn-primary" onClick={handleClickSaveEvent}>
-        Save Event
+      <button className="btn btn-primary" onClick={handleClickAddEvent}>
+        Add Event
           </button>
     </form>
   )

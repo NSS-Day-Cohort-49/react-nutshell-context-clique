@@ -49,12 +49,16 @@ export const ApplicationViews = () => {
       </MessageProvider>
 
     <EventProvider>
-      <Route path="/events">
+      <Route exact path="/events">
         <EventList />
       </Route>
 
       <Route exact path="/events/detail/:eventId(\d+)">
         <EventsDetails />
+      </Route>
+
+      <Route exact path="/events/edit/:eventId(\d+)">
+        <EventForm />
       </Route>
 
       <Route exact path="/events/create">
