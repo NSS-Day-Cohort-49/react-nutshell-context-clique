@@ -5,6 +5,7 @@ import { FriendList } from "./friends/FriendsList"
 import { FriendProvider } from "./friends/FriendsProvider"
 import { FriendsForm } from "./friends/FriendsForm"
 import { UserProvider } from "./users/UsersProvider"
+
 export const ApplicationViews = () => {
   return (
     <>
