@@ -1,0 +1,112 @@
+* {
+    font-family: cursive;
+}
+
+.messageHeader {
+    font-size: 50px;
+    margin: 2em 0 2em 12.5em;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30em;
+    margin-top: 5em;
+}
+
+.msg__wrapper {
+    margin: 2em;
+}
+
+.message__div {
+    display: flex;
+}
+
+.message {
+    width: 450px;
+    height: 250px;
+    transform: skew(20deg);
+    background: goldenrod;
+    text-align: center;
+  }
+
+
+
+
+
+
+.message__sender {
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+.message__body {
+    margin-top: 0.5em;
+    font-size: 25px;
+    text-align: center;
+}
+
+.msg__buttons {
+    margin-left: 18em;
+}
+
+.edit__msg {
+    margin-right: 1em;
+    background-color: gold;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-top: .5em;
+}
+
+.edit__msg:hover {
+    border: 2px solid black;
+    color: whitesmoke;
+    background-color: black;
+}
+
+.delete__msg {
+    background-color: gold;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+
+.delete__msg:hover {
+    border: 2px solid black;
+    color: whitesmoke;
+    background-color: black;
+}
+
+/* Styling for message input */
+
+.field {
+    display: flex;
+    margin: 2em 0em 4em 25em;
+}
+
+.label {
+    margin: 4em 1em 2em 0em;
+}
+
+.content {
+    height: 100px;
+    width: 400px;
+    border-radius: 10%;
+}
+
+.sendMsgBut {
+    width: 50px;
+    height: 50px;
+    margin-left: 0.5em;
+    margin-right: 2.2em;
+    float:right;
+    /* margin-bottom: 0em; */
+    cursor: pointer;
+    margin-top: 3.2em;
+    transition: all .2s ease-in-out;
+}
+
+.sendMsgBut:hover {
+    transform: scale(1.3);
+}
+
