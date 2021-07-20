@@ -1,26 +1,27 @@
+
 import React, { useContext, useEffect, useState} from "react"
-import { FriendContext } from "./FriendsProvider"
+import { TaskContext } from "./TasksProvider"
 import { useParams } from "react-router-dom"
 
 
-export const FriendsDetails = () => {
-    const { friendId } = useParams();
-    const [friend, setFriend] = useState([])
+export const TasksDetails = () => {
+    const { taskId } = useParams();
+    const [task, setTask] = useState([])
     //const { articles, getArticles } = useContext(ArticleContext)
     //const { events, getEvents } = useContext(EventContext)
     //const { messages, getMessages } = useContext(MessageContext)
-    const { getFriendById } = useContext(FriendContext)
+    const { getTaskById } = useContext(TaskContext)
     
     useEffect(() => {
-        getFriendById(friendId)
+        getTaskById(taskId)
         .then(response => {
-            setFriend(response)
+            setTask(response)
         })
     }, [])
 
     return (
-        <section className="friendArticle">
-            <h2 className="friendArticle__title">Articles By: {friendId.userId}</h2>
+        <section className="taskArticle">
+            <h2 className="taskArticle__title">Articles By: {taskId.userId}</h2>
 
         </section>
     )
