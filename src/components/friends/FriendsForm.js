@@ -32,16 +32,18 @@ export const FriendsForm = () => {
     const addNewFriendOption = (event) => {
         event.preventDefault()
 
-        const userId = friend.userId
-        const currentUserId = parseInt(sessionStorage.getItem("nutshell_user"))
+        // const userId = friend.userId
+        const findTheUserInfo = users.find(user => friend.userId === user.name)
+        const userId = findTheUserInfo.id
+        // const currentUserId = parseInt(sessionStorage.getItem("nutshell_user"))
         
 
         if (userId === "") {
             window.alert("Please Enter a Name")
         } else {
             const newFriend = ({
-                userId: parseInt(friend.userId),
-                currentUserId: currentUserId
+                userId: userId,
+                currentUserId: parseInt(sessionStorage.getItem("nutshell_user"))
             })
             addFriend(newFriend)
             .then(() => history.push("/friends"))
