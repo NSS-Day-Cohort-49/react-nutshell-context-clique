@@ -3,7 +3,8 @@ import { Route } from "react-router-dom"
 import { FriendsDetails } from "./friends/FriendsDetails"
 import { FriendList } from "./friends/FriendsList"
 import { FriendProvider } from "./friends/FriendsProvider"
-
+import { FriendsForm } from "./friends/FriendsForm"
+import { UserProvider } from "./users/UsersProvider"
 export const ApplicationViews = () => {
   return (
     <>
@@ -16,6 +17,12 @@ export const ApplicationViews = () => {
         <Route exact path="/friends/detail/:friendId(\d+)">
           <FriendsDetails />
         </Route>
+
+        <UserProvider>
+        <Route exact path="/friends/create">
+          <FriendsForm />
+        </Route>
+        </UserProvider>
 
         <Route exact path="/friends">
           <FriendList />
