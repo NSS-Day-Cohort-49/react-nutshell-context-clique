@@ -1,22 +1,18 @@
 import React from "react"
 import { Route } from "react-router-dom"
-<<<<<<< HEAD
 import { MessageProvider } from "./messages/MessageProvider";
 import { MessageList } from "./messages/MessageList";
-=======
 import { FriendsDetails } from "./friends/FriendsDetails"
 import { FriendList } from "./friends/FriendsList"
 import { FriendProvider } from "./friends/FriendsProvider"
 import { FriendsForm } from "./friends/FriendsForm"
 import { UserProvider } from "./users/UsersProvider"
->>>>>>> main
+
 export const ApplicationViews = () => {
   return (
     <>
-
+      <Route>
         {/* Render the component for news articles */}
-<<<<<<< HEAD
-=======
       </Route>
 
       <FriendProvider>
@@ -39,7 +35,6 @@ export const ApplicationViews = () => {
       <Route path="/messages">
         {/* Render the component for the messages */}
       </Route>
->>>>>>> main
 
       <MessageProvider>   
           <Route path="/messages">
