@@ -7,6 +7,8 @@ import { EventProvider } from "./events/EventsProvider"
 import { EventList } from "./events/EventsList"
 import { EventsDetails } from "./events/EventsDetail"
 import { EventForm } from "./events/EventsForm"
+import { FriendsForm } from "./friends/FriendsForm"
+import { UserProvider } from "./users/UsersProvider"
 
 export const ApplicationViews = () => {
   return (
@@ -20,6 +22,12 @@ export const ApplicationViews = () => {
         <Route exact path="/friends/detail/:friendId(\d+)">
           <FriendsDetails />
         </Route>
+
+        <UserProvider>
+        <Route exact path="/friends/create">
+          <FriendsForm />
+        </Route>
+        </UserProvider>
 
         <Route exact path="/friends">
           <FriendList />
