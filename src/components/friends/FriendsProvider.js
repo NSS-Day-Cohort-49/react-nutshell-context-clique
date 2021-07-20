@@ -30,6 +30,7 @@ export const FriendProvider = (props) => {
 
     const getFriendById = id => {
         return fetch(`http://localhost:8088/friends/${id}?_expand=user`)
+        .then(res => res.json())
     }
 
     return (
