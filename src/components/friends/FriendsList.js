@@ -18,7 +18,7 @@ export const FriendList = () => {
 
     return (
         <>
-            <button onClick={() => { history.push("/friends/create") }}>
+            <button onClick={() => { history.push("/friends/create")}}>
                 Add Friend
             </button>
 
