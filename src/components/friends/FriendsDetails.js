@@ -18,6 +18,7 @@ export const FriendsDetails = () => {
         .then(response => {
             setFriend(response)
         })
+        .then(getArticles)
     }, [])
 
     const handleDelete = () => {
