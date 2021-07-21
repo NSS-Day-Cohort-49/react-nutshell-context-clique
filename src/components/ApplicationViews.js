@@ -3,6 +3,10 @@ import { Route } from "react-router-dom"
 import { MessageProvider } from "./messages/MessageProvider";
 import { FriendProvider } from "./friends/FriendsProvider"
 import { ArticleProvider } from "./articles/ArticleProvider";
+import { EventProvider } from "./events/EventsProvider"
+import { EventList } from "./events/EventsList"
+import { EventForm } from "./events/EventsForm"
+import { FriendsForm } from "./friends/FriendsForm"
 import { UserProvider } from "./users/UsersProvider"
 import { ArticleList } from "./articles/ArticleList";
 import { MessageList } from "./messages/MessageList";
@@ -55,7 +59,19 @@ export const ApplicationViews = () => {
           </Route>
       </MessageProvider>
 
-      
+    <EventProvider>
+      <Route exact path="/events">
+        <EventList />
+      </Route>
+
+      <Route exact path="/events/edit/:eventId(\d+)">
+        <EventForm />
+      </Route>
+
+      <Route exact path="/events/create">
+        <EventForm />
+      </Route>
+    </EventProvider>
     </>
   )
 }
