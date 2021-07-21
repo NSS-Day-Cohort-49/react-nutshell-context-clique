@@ -1,0 +1,9 @@
+.eventCSS {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.eventCSS {
+    border: solid black 2px;
+}
