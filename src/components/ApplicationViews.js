@@ -8,11 +8,14 @@ import { EventList } from "./events/EventsList"
 import { EventForm } from "./events/EventsForm"
 import { FriendsForm } from "./friends/FriendsForm"
 import { UserProvider } from "./users/UsersProvider"
+import { TaskProvider } from "./tasks/TasksProvider";
+import { TaskList } from "./tasks/TasksList";
 import { ArticleList } from "./articles/ArticleList";
 import { MessageList } from "./messages/MessageList";
 import { FriendList } from "./friends/FriendsList"
 import { FriendsDetails } from "./friends/FriendsDetails"
 import { ArticleForm } from "./articles/ArticleForm";
+import { TasksForm } from "./tasks/TaskForm";
 
 
 export const ApplicationViews = () => {
@@ -48,10 +51,25 @@ export const ApplicationViews = () => {
 
         </FriendProvider>
       </ArticleProvider>
-      <Route path="/messages">
-        {/* Render the component for the messages */}
-      </Route>
+     
+    <UserProvider>
+       <TaskProvider>
+          <Route exact path="/tasks">
+                <TaskList />
+         </Route>
+          <Route exact path= "/tasks/create">
+                <TasksForm />
+             </Route>
+        </TaskProvider> 
+    </UserProvider>
+    
 
+    
+      
+
+      <Route path="/events">
+        {/* Render the component for the user's events */}
+      </Route>
       <MessageProvider>   
           <Route path="/messages">
             {/* Render the component for the messages */}
