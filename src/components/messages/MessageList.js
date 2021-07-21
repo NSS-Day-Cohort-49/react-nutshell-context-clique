@@ -17,7 +17,7 @@ export const MessageList = () => {
 
     const [message, setMessage] = useState({
         userId: 0,
-        text: "",
+        body: "",
         isPublic: false
     });
 
@@ -40,7 +40,7 @@ export const MessageList = () => {
 
       
        let newMessage = {...message} 
-       newMessage.text = '';
+       newMessage.body = '';
        setMessage(newMessage)
     };
 
