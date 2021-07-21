@@ -16,6 +16,7 @@ export const ArticleList = () => {
     useEffect(() => {
         console.log("ArticleList: useEffect - getArticles")
         getArticles()
+        .then(getFriends)
     }, [])
 
     return (
@@ -25,10 +26,10 @@ export const ArticleList = () => {
             </button>
 
             <div className="articles">
-                {console.log("employeeList: Render", articles)}
+                {console.log("articleList: Render", articles)}
                 {
                     articles.map(article => {
-                        const friend = friends.find(f => f.id === article.friendId)
+                        const friend = friends.find(f => f.id === article.userId)
 
                         return <ArticleCard key={article.id}
                         article={article}

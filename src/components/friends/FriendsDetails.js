@@ -22,16 +22,7 @@ export const FriendsDetails = () => {
 
     return (
         <section className="friendArticle">
-<<<<<<< HEAD
-            <h2 className="friendArticle__title">
-                Articles By: {friend.user?.name}
-            </h2>
-            <div className="friendArticle">
-                {article.userId}
-            </div>
-=======
             <h2 className="friendArticle__title">Articles By: {friend.user?.name}</h2>
->>>>>>> main
 
         </section>
     )

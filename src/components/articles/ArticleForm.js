@@ -57,7 +57,7 @@ export const ArticleForm = () => {
                 timestamp: Date.now()
             }
             addArticle(newArticle)
-            .then(() => history.push("/articles"))
+            .then(() => history.push("/"))
     }
 
     return (

@@ -21,16 +21,21 @@ export const ArticleProvider = (props) => {
         //.then(response => response.json())
         .then(getArticles)
     }
-    const deleteArticle = article => {
-        return fetch(`http://localhost:8088/articles/${article.id}`), {
+    const deleteArticle = articleId => {
+        return fetch(`http://localhost:8088/articles/${articleId}`, {
             method: "DELETE"
-        }
+        })
         .then(getArticles)
+    }
+
+    const getArticleById = id => {
+        return fetch(`"http://localhost:8088/articles/${id}?_expand=user"`)
+        .then(res => res.json())
     }
 
     return (
         <ArticleContext.Provider value={{
-            articles, getArticles, addArticle, deleteArticle
+            articles, getArticles, addArticle, deleteArticle, getArticleById
         }}>
             {props.children}
         </ArticleContext.Provider>
