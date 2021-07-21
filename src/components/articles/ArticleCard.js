@@ -17,7 +17,8 @@ export const ArticleCard = ({ article }) => {
         <section className="article">
         <h6 className="article__title">{article.title}</h6>
         <div className="article__synopsis">{article.synopsis}</div>
-        <Link className="article__link">{article.url}</Link>
+        {/* i put 'to' here so that a prop error i was having would go away lol sorry it was annoying me */}
+        <Link to={article.url} className="article__link">{article.url}</Link>
         <div className="article__poster">Posted By: {article.user?.name}</div>
         <div className="article__timestamp">Posted at: {article.timestamp}</div>
         <button onClick={articleDelete}>Delete Article</button>
