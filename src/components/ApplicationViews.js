@@ -17,7 +17,6 @@ import { FriendsDetails } from "./friends/FriendsDetails"
 import { ArticleForm } from "./articles/ArticleForm";
 import { TasksForm } from "./tasks/TaskForm";
 
-
 export const ApplicationViews = () => {
   return (
     <>
