@@ -7,6 +7,8 @@ import { FriendList } from "./friends/FriendsList"
 import { FriendProvider } from "./friends/FriendsProvider"
 import { FriendsForm } from "./friends/FriendsForm"
 import { UserProvider } from "./users/UsersProvider"
+import { TaskProvider } from "./tasks/TasksProvider";
+import { TaskList } from "./tasks/TasksList";
 
 export const ApplicationViews = () => {
   return (
@@ -37,15 +39,11 @@ export const ApplicationViews = () => {
         {/* Render the component for the messages */}
       </Route>
 
-    {/* <TaskProvider>
+    <TaskProvider>
        <Route exact path="/tasks">
          <TaskList />
       </Route>
-
-      <Route exact path="/tasks/create">
-        <TasksForm />
-        </Route>
-    </TaskProvider> */}
+    </TaskProvider> 
 
       
 

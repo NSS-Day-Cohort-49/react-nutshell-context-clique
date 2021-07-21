@@ -10,7 +10,7 @@ export const TaskProvider = (props) => {
         .then(setTasks)
     }
 
-    const addTask = task => {
+    let addTask = (task) => {
         return fetch("http://localhost:8088/tasks", {
             method: "POST",
             headers: {
@@ -20,18 +20,30 @@ export const TaskProvider = (props) => {
         })
         .then(getTasks)
     }
+
+
+    const getTaskById = id => {
+        return fetch(`http://localhost:8088/tasks/${id}?_expand=user`)
+    }
     // Double check props and interpolation 
-    const deleteTask = task => {
-        return fetch(`http://localhost:8088/tasks/${task.id}`), {
+    const deleteTask = (taskId) => {
+        return fetch(`http://localhost:8088/tasks/${taskId}`), {
             method: "DELETE"
         }
         .then(getTasks)
     }
 
-    const getTaskById = id => {
-        return fetch(`http://localhost:8088/tasks/${id}?_expand=user`)
-    }
-import React,{ useState, createContext } from "react"
+    const updateTask = (task) => {
+        return fetch(`http://localhost:8088/messages/${task.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(task)
+        })
+          .then(getTasks)
+      };
+
 
     return (
         <TaskContext.Provider value={{

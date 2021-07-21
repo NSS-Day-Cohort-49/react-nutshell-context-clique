@@ -12,6 +12,8 @@ export const MessageCard = ({ message }) => {
   
     const history = useHistory();
 
+    
+
     const handleDelete = () => {
       deleteMessage(message.id)
       .then(() => {
