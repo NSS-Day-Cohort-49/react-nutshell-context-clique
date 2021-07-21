@@ -5,12 +5,13 @@ import { useHistory, useParams } from "react-router-dom"
 
 export const FriendsDetails = () => {
     const { friendId } = useParams();
-    const [friend, setFriend] = useState([])
+    const [friend, setFriend] = useState({})
     //const { articles, getArticles } = useContext(ArticleContext)
     //const { events, getEvents } = useContext(EventContext)
     //const { messages, getMessages } = useContext(MessageContext)
     const { getFriendById, deleteFriend } = useContext(FriendContext)
-    const history = useHistory
+    const history = useHistory()
+    
 
     useEffect(() => {
         getFriendById(friendId)

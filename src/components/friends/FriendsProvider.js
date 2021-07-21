@@ -21,10 +21,10 @@ export const FriendProvider = (props) => {
         .then(getFriends)
     }
     // Double check props and interpolation 
-    const deleteFriend = friendId => {
-        return fetch(`http://localhost:8088/friends/${friendId}`), {
+    const deleteFriend = (friendId) => {
+        return fetch(`http://localhost:8088/friends/${friendId}`, {
             method: "DELETE"
-        }
+        })
         .then(getFriends)
     }
 
