@@ -6,7 +6,7 @@ import { useHistory, useParams } from "react-router-dom"
 export const FriendsDetails = () => {
     const { friendId } = useParams();
     const [friend, setFriend] = useState({})
-    //const { articles, getArticles } = useContext(ArticleContext)
+    // const { articles, getArticles } = useContext(ArticleContext)
     //const { events, getEvents } = useContext(EventContext)
     //const { messages, getMessages } = useContext(MessageContext)
     const { getFriendById, deleteFriend } = useContext(FriendContext)
@@ -18,7 +18,7 @@ export const FriendsDetails = () => {
         .then(response => {
             setFriend(response)
         })
-        .then(getArticles)
+        // .then(getArticles)
     }, [])
 
     const handleDelete = () => {

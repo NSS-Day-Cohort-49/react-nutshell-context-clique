@@ -13,7 +13,7 @@ import { MessageList } from "./messages/MessageList";
 import { FriendList } from "./friends/FriendsList"
 import { FriendsDetails } from "./friends/FriendsDetails"
 import { ArticleForm } from "./articles/ArticleForm";
-import { FriendsForm } from "./friends/FriendsForm";
+
 
 export const ApplicationViews = () => {
   return (
