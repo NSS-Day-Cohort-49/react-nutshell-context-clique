@@ -9,7 +9,8 @@ export const EventForm = () => {
   const [event, setEvent] = useState({
     eventName: "",
     dateTime: "",
-    locationName: ""
+    locationName: "",
+    currentUserId: 0
   });
 
   const history = useHistory();
@@ -31,10 +32,13 @@ export const EventForm = () => {
   const handleClickAddEvent = (evt) => {
     evt.preventDefault() //Prevents the browser from submitting the form
 
+    const userId = parseInt(sessionStorage.getItem("nutshell_user"))
+
       const newEvent = {
         eventName: event.eventName,
         locationName: event.locationName,
-        dateTime: event.dateTime
+        dateTime: event.dateTime,
+        userId: userId
       }
       addEvent(newEvent)
         .then(() => history.push("/events"))
