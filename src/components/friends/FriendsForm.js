@@ -34,13 +34,14 @@ export const FriendsForm = () => {
 
         // const userId = friend.userId
         const findTheUserInfo = users.find(user => friend.userId === user.name)
-        const userId = findTheUserInfo.id
+        
         // const currentUserId = parseInt(sessionStorage.getItem("nutshell_user"))
         
-
-        if (userId === "") {
-            window.alert("Please Enter a Name")
+        
+        if (!findTheUserInfo) {
+            window.alert("Please Enter a Valid Username")
         } else {
+            const userId = findTheUserInfo.id
             const newFriend = ({
                 userId: userId,
                 currentUserId: parseInt(sessionStorage.getItem("nutshell_user"))

@@ -69,5 +69,7 @@ export const EventForm = () => {
         Add Event
           </button>
     </form>
+
+    
   )
 }
