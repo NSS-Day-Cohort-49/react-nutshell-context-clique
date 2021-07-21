@@ -1,9 +1,11 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { EventContext } from "./EventsProvider"
+import "./Event.css"
 
 export const EventCard = ({ event }) => {
     const { deleteEvent } = useContext(EventContext)
+
     const history = useHistory()
 
     const handleDelete = () => {
@@ -15,7 +17,6 @@ export const EventCard = ({ event }) => {
 
     return (
         <section className="event">
-            <div className="eventCSS">
             <h3 className="event__name">{event.eventName}</h3>
             <h2 className="event__location">Event Location: {event.locationName}</h2>
             <h2 className="event__time">Event Date: {event.dateTime}</h2>
@@ -25,7 +26,6 @@ export const EventCard = ({ event }) => {
                 history.push(`/events/edit/${event.id}`)
             }}>Edit</button>
             <button onClick={handleDelete}>Delete</button>
-            </div>
         </section>
     )
 }
