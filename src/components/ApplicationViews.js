@@ -1,15 +1,11 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { ArticleProvider } from "./articles/ArticleProvider"
+import { MessageProvider } from "./messages/MessageProvider";
+import { MessageList } from "./messages/MessageList";
+import { FriendsDetails } from "./friends/FriendsDetails"
+import { FriendList } from "./friends/FriendsList"
 import { FriendProvider } from "./friends/FriendsProvider"
 import { UserProvider } from "./users/UsersProvider"
-import { ArticleList } from "./articles/ArticleList"
-import { FriendList } from "./friends/FriendsList"
-import { FriendsForm } from "./friends/FriendsForm"
-import { FriendsDetails } from "./friends/FriendsDetails"
-import { ArticleForm } from "./articles/ArticleForm"
-import { ArticleDetails } from "./articles/ArticleDetails"
-
 
 export const ApplicationViews = () => {
   return (
@@ -47,13 +43,14 @@ export const ApplicationViews = () => {
         {/* Render the component for the messages */}
       </Route>
 
-      <Route path="/tasks">
-        {/* Render the component for the user's tasks */}
-      </Route>
+      <MessageProvider>   
+          <Route path="/messages">
+            {/* Render the component for the messages */}
+            <MessageList />
+          </Route>
+      </MessageProvider>
 
-      <Route path="/events">
-        {/* Render the component for the user's events */}
-      </Route>
+      
     </>
   )
 }
