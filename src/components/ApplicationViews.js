@@ -50,10 +50,7 @@ export const ApplicationViews = () => {
 
         </FriendProvider>
       </ArticleProvider>
-      <Route path="/messages">
-        {/* Render the component for the messages */}
-      </Route>
-      
+     
     <UserProvider>
        <TaskProvider>
           <Route exact path="/tasks">
