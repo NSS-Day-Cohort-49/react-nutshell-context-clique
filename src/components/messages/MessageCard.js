@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { MessageContext } from "./MessageProvider";
 import "./Message.css";
 import { useHistory} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -9,7 +11,7 @@ import { useHistory} from "react-router-dom";
 export const MessageCard = ({ message }) => {
 
     const { deleteMessage, updateMessage, getMessages } = useContext(MessageContext)
-  
+    
     const [uneditedMessage, setUneditedMessage] = useState({
         messageState: false
     })
@@ -95,7 +97,8 @@ export const MessageCard = ({ message }) => {
                     <button className="delete__msg" onClick={() => {handleDelete()}}>Delete</button>
                 </div>
                 <div className="message__div">
-                    <div className="message__sender">{ message.user.name }</div>
+                    {/* <Link to={"/friends/create"}> { message.user.name }</Link> */}
+                    <Link to={"/friends/create"}> { message.user.name }</Link>
                 </div>
                 {messageInput}
             </section>
