@@ -1,0 +1,23 @@
+* {
+    font-family: cursive;
+}
+
+.taskHeader {
+    font-size: 50px;
+    margin: 2em 0 2em 12.5em;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30em;
+    margin-top: 5em;
+}
+
+.task__wrapper {
+    margin: 2em;
+}
+
+.task__div {
+    display: flex;
+}

@@ -10,7 +10,7 @@ export const TaskProvider = (props) => {
         .then(setTasks)
     }
 
-    let addTask = (task) => {
+    const addTask = (task) => {
         return fetch("http://localhost:8088/tasks", {
             method: "POST",
             headers: {

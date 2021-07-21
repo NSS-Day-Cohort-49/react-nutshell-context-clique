@@ -1,6 +1,7 @@
 import React, {useContext} from "react"
 import { TaskContext } from "./TasksProvider";
 import { useHistory} from "react-router-dom"
+import "./Tasks.css"
 
 export const TaskCard = ({ task }) => {
 
@@ -30,8 +31,8 @@ export const TaskCard = ({ task }) => {
         <div className="task__wrapper">
             <section className="task">
                 <div className="task__buttons">
-                    <button className="edit__task"onClick={handleEdit}>Edit</button>
-                    <button className="delete__task" onClick={handleDelete}>Delete</button>
+                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleDelete}>Delete</button>
                 </div>
             </section>
         </div>
