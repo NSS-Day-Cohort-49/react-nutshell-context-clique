@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState} from "react"
 import { FriendContext } from "./FriendsProvider"
 import { useParams } from "react-router-dom"
+import { ArticleContext } from "../articles/ArticleProvider"
 
 
 export const FriendsDetails = () => {
     const { friendId } = useParams();
     const [friend, setFriend] = useState([])
-    //const { articles, getArticles } = useContext(ArticleContext)
+    const { article, getArticles } = useContext(ArticleContext)
     //const { events, getEvents } = useContext(EventContext)
     //const { messages, getMessages } = useContext(MessageContext)
     const { getFriendById } = useContext(FriendContext)
@@ -16,6 +17,7 @@ export const FriendsDetails = () => {
         .then(response => {
             setFriend(response)
         })
+        .then(getArticles)
     }, [])
 
     return (
