@@ -39,7 +39,7 @@ export const FriendsForm = () => {
         
         
         if (!findTheUserInfo) {
-            window.alert("Please Enter a Valid Username")
+            window.alert("Not a Valid User")
         } else {
             const userId = findTheUserInfo.id
             const newFriend = ({
@@ -74,3 +74,5 @@ export const FriendsForm = () => {
 
 
 }
+
+

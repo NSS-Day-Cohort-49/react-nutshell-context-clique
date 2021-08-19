@@ -28,9 +28,12 @@ export const ArticleList = () => {
             <div className="articles">
                 {console.log("articleList: Render", articles)}
                 {
-                    articles.map(article => {
-                        const friend = friends.find(f => f.id === article.userId)
-
+                    articles.filter((article) => {
+                        
+                        return parseInt(sessionStorage.getItem("nutshell_user")) === article.userId
+                    }).map((article) => {
+                        const friend = friends.find(f => f.userId === article.userId)
+                        
                         return <ArticleCard key={article.id}
                         article={article}
                         friend={friend} />

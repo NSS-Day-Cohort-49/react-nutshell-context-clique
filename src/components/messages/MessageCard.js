@@ -18,6 +18,8 @@ export const MessageCard = ({ message }) => {
 
     const history = useHistory();
 
+    //Playing around with adding friend on click
+
 
     useEffect(() => {
         getMessages();
@@ -97,8 +99,8 @@ export const MessageCard = ({ message }) => {
                     <button className="delete__msg" onClick={() => {handleDelete()}}>Delete</button>
                 </div>
                 <div className="message__div">
-                    {/* <Link to={"/friends/create"}> { message.user.name }</Link> */}
                     <Link to={"/friends/create"}> { message.user.name }</Link>
+                    {/* <Link id="userId" onClick={handleControlledInputChangeForFriends} value={friend.userId}> { message.user.name }</Link> */}
                 </div>
                 {messageInput}
             </section>

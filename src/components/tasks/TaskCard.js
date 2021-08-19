@@ -31,6 +31,8 @@ export const TaskCard = ({ task }) => {
         <div className="task__wrapper">
             <section className="task">
                 <div className="task__buttons">
+                  <h3>{task.taskName}</h3>
+                  <div>{task.completionDate}</div>
                     <button onClick={handleEdit}>Edit</button>
                     <button onClick={handleDelete}>Delete</button>
                 </div>

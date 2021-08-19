@@ -31,6 +31,7 @@ export const FriendsDetails = () => {
     return (
         <section className="friendArticle">
             <h2 className="friendArticle__title">{friend.user?.name}</h2>
+            <h3>Email: {friend.user?.email}</h3>
             <button onClick={ handleDelete }>Delete Friend</button>
 
         </section>

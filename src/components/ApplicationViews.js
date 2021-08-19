@@ -44,10 +44,11 @@ export const ApplicationViews = () => {
             </Route>
           </UserProvider>
 
+        <MessageProvider>
           <Route exact path="/friends">
             <FriendList />
           </Route>
-
+          </MessageProvider>
         </FriendProvider>
       </ArticleProvider>
      
